@@ -13,10 +13,10 @@ import java.util.List;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    @Override
-    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
-        resolvers.add(new LoginMemberArgumentResolver());
-    }
+//    @Override
+//    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
+//        resolvers.add(new LoginMemberArgumentResolver());
+//    }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -29,6 +29,6 @@ public class WebConfig implements WebMvcConfigurer {
                 .order(2)
                 .addPathPatterns("/**")
                 .excludePathPatterns("/", "/members/add", "/login", "logout",
-                        "/css/**", "/*.ico", "/error", "/400");
+                        "/css/**", "/*.ico", "/error", "/400", "/500", "/api/**", "/api2/**");
     }
 }
